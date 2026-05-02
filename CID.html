@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="bn" id="html-root">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>রিসিকা হত্যাকাণ্ড: ডিজিটাল ব্ল্যাকমেইল ও প্রাতিষ্ঠানিক কভার-আপ — CID NEWS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --ink: #1a1208;
+            --warm-black: #0f0d0a;
+            --paper: #faf7f2;
+            --cream: #f3ede3;
+            --tan: #e8dccb;
+            --red: #c0392b;
+            --deep-red: #8b1a1a;
+            --gold: #b5892a;
+            --muted: #7a6e62;
+            --border: #d6cdbf;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.85;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── TOP BAR & LANG TOGGLE ── */
+        .top-bar {
+            background: #000;
+            color: #fff;
+            padding: 8px 24px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+        .lang-toggle a {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0 8px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .lang-toggle a.active, .lang-toggle a:hover { color: var(--gold); }
+
+        /* ── MASTHEAD ── */
+        .masthead {
+            background: var(--warm-black);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        .masthead-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .masthead-logo-img { height: 54px; width: auto; display: block; filter: drop-shadow(0 0 6px rgba(255,255,255,0.2)); }
+        .masthead-text { text-align: center; }
+        .masthead-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .masthead-tagline {
+            font-family: 'Source Serif 4', serif;
+            font-style: italic;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--border);
+            margin-top: 6px;
+        }
+
+        /* ── WRAPPER ── */
+        .wrapper { max-width: 860px; margin: 0 auto; padding: 0 24px 50px; }
+
+        .section-label {
+            display: inline-block;
+            margin-top: 50px;
+            margin-bottom: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #fff;
+            background: var(--deep-red);
+            padding: 4px 14px 3px;
+            text-transform: uppercase;
+        }
+
+        h1.headline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(32px, 6vw, 44px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--warm-black);
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            border-left: 6px solid var(--red);
+            padding-left: 24px;
+        }
+
+        .meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+            margin-bottom: 40px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .byline {
+            font-weight: 700;
+            color: var(--deep-red);
+            font-family: 'Source Serif 4', serif;
+            letter-spacing: 0;
+            text-transform: none;
+            font-size: 15px;
+        }
+
+        /* ── HERO IMAGE ── */
+        .hero-container {
+            width: 100%;
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--gold);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .hero-container img { width: 100%; max-height: 550px; object-fit: cover; display: block; }
+        .hero-caption {
+            font-family: 'Source Serif 4', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--muted);
+            padding: 10px 14px;
+            margin-bottom: 40px;
+            background: var(--cream);
+            border-left: 3px solid var(--border);
+        }
+
+        /* ── ARTICLE BODY ── */
+        .article-body p {
+            font-size: 19px;
+            color: #2c2418;
+            margin-bottom: 26px;
+            text-align: justify;
+            word-spacing: 1px;
+        }
+        .article-body p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 900;
+            float: left;
+            line-height: 0.8;
+            margin: 8px 12px -4px 0;
+            color: var(--deep-red);
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+            margin: 48px 0;
+            padding: 32px 40px;
+            border-left: 4px solid var(--red);
+            background: #fdfbf7;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+        }
+        .pull-quote p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(20px, 4vw, 26px);
+            line-height: 1.5;
+            color: var(--warm-black);
+            margin: 0 0 16px;
+            text-align: left;
+        }
+        .pull-quote cite {
+            display: block;
+            font-family: 'Source Serif 4', serif;
+            font-style: normal;
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        h2.subhead {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(22px, 4vw, 30px);
+            font-weight: 800;
+            color: var(--warm-black);
+            margin: 48px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--tan);
+            line-height: 1.3;
+        }
+
+        /* ── CLEAN FACT BOX ── */
+        .clean-fact-box {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--gold);
+            padding: 30px 35px;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .clean-fact-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            color: var(--deep-red);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            border-bottom: 1px dotted var(--border);
+            padding-bottom: 8px;
+        }
+        .clean-fact-box p { font-size: 17px; line-height: 1.8; color: var(--ink); margin-bottom: 14px; text-align: left; }
+        .clean-fact-box p:last-child { margin-bottom: 0; }
+
+        /* ── GLASSMORPHIC PROOFS DASHBOARD ── */
+        .proofs-dashboard {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+        .proofs-dashboard h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            letter-spacing: 2px;
+            color: var(--deep-red);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+        }
+        .evidence-list { list-style: none; padding: 0; }
+        .evidence-item {
+            background: rgba(255,255,255,0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--gold);
+            font-size: 18px;
+        }
+        .evidence-item strong { color: var(--deep-red); }
+
+        /* ── FB PILL BUTTON ── */
+        .fb-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #1877F2;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.3);
+            transition: 0.3s;
+            margin-top: 25px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        .fb-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(24, 119, 242, 0.4); background: #1558b0; }
+
+        /* ── CORRUPTION SECTION ── */
+        .corruption-section {
+            border: 2px solid var(--red);
+            padding: 30px 35px;
+            border-radius: 12px;
+            margin: 50px 0;
+            background: #fffbf9;
+        }
+        .corruption-section h3 {
+            color: var(--red);
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        /* ── MEDIA GRID ── */
+        .media-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--warm-black);
+        }
+        .yt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .video-title { padding: 15px; font-weight: bold; font-size: 15px; color: var(--ink); }
+
+        /* ── TAGS ── */
+        .tag-container {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: var(--cream);
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .tag:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--warm-black);
+            color: #a3998f;
+            padding: 60px 24px;
+            font-size: 15px;
+            border-top: 4px solid var(--deep-red);
+        }
+        footer h3 {
+            color: var(--gold);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        footer a { color: #d6cdbf; text-decoration: none; border-bottom: 1px dotted #d6cdbf; transition: color 0.2s; }
+        footer a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+        footer ul { padding-left: 20px; margin-bottom: 30px; line-height: 1.8; }
+        footer li { margin-bottom: 10px; }
+
+        /* ── LANGUAGE SWITCHING ── */
+        [data-lang="en"] { display: none; }
+        body.lang-en [data-lang="bn"] { display: none; }
+        body.lang-en [data-lang="en"] { display: block; }
+        body.lang-en span[data-lang="en"] { display: inline; }
+        body.lang-en span[data-lang="bn"] { display: none; }
+
+        @media (max-width: 768px) {
+            .yt-grid { grid-template-columns: 1fr; }
+            h1.headline { padding-left: 16px; border-left-width: 4px; }
+            .pull-quote, .proofs-dashboard, .corruption-section { padding: 24px; }
+            .clean-fact-box { padding: 20px; }
+            .masthead-inner { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body id="body-root">
+
+    <div class="top-bar">
+        <div class="lang-toggle">
+            <a href="#" id="btn-bn" class="active" onclick="setLang('bn'); return false;">BN</a> | 
+            <a href="#" id="btn-en" onclick="setLang('en'); return false;">EN</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="masthead">
+            <div class="masthead-inner">
+                <img src="https://i.ibb.co.com/C3h8RCh5/file-000000007a3071fab9aa04b60ae4c7df.png" alt="CID Logo" class="masthead-logo-img" onerror="this.style.display='none'" />
+                <div class="masthead-text">
+                    <div class="masthead-logo">CID NEWS INVESTIGATION</div>
+                    <div class="masthead-tagline">
+                        <span data-lang="bn">সত্য উন্মোচনে আপোসহীন &nbsp;·&nbsp; ইনভেস্টিগেটিভ জার্নাল</span>
+                        <span data-lang="en">Uncompromising Truth &nbsp;·&nbsp; Investigative Journal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <div class="section-label">
+            <span data-lang="bn">Investigation Report</span>
+            <span data-lang="en">Investigation Report</span>
+        </div>
+
+        <h1 class="headline" data-lang="bn">ক্যামব্রিয়ান স্কুলের ছাত্রী ঋষিকার মৃত্যু: ডিজিটাল ব্ল্যাকমেইল ও প্রাতিষ্ঠানিক কভার-আপ</h1>
+        <h1 class="headline" data-lang="en">Death of Cambrian Student Rishika: Digital Blackmail and Institutional Cover-up</h1>
+
+        <div class="meta-bar">
+            <span class="byline">
+                <span data-lang="bn">CID ইনভেস্টিগেশন ডেস্ক</span>
+                <span data-lang="en">CID Investigation Desk</span>
+            </span>
+            <span>◆</span>
+            <span>CID News</span>
+            <span>◆</span>
+            <span data-lang="bn">২ মে, ২০২৬</span>
+            <span data-lang="en">May 2, 2026</span>
+        </div>
+
+        <div class="hero-container">
+            <img src="https://i.ibb.co.com/gZDJD6yx/Screenshot-20260426-224837-Instagram-2.jpg" alt="Victim Rishika" />
+        </div>
+        <div class="hero-caption">
+            <span data-lang="bn">ভিক্টিম ছাত্রী ঋষিকা। ছবি: সংগৃহীত</span>
+            <span data-lang="en">Victim student Rishika. Photo: Collected</span>
+        </div>
+
+        <article class="article-body">
+
+            <!-- BENGALI CONTENT -->
+            <div data-lang="bn">
+                <p>ঢাকার মোহাম্মদপুরে অবস্থিত ক্যামব্রিয়ান স্কুল অ্যান্ড কলেজের (বিএসবি এডুকেশন গ্রুপ) নবম শ্রেণির ছাত্রী ঋষিকার মৃত্যু প্রথম দর্শনে একটি সাধারণ আত্মহত্যার ঘটনা মনে হলেও, এর গভীরে লুকিয়ে আছে এক ভয়ংকর অপরাধ চক্রের ছায়া। একটি অসম প্রেমের সম্পর্ক কীভাবে জোরপূর্বক মাদকাসক্তি, ডিজিটাল ব্ল্যাকমেইল এবং শেষ পর্যন্ত মৃত্যুর দিকে ঠেলে দিতে পারে, এই ঘটনাটি তারই এক নির্মম দৃষ্টান্ত।</p>
+                <p>অনুসন্ধানে জানা যায়, ঋষিকা অত্যন্ত শান্ত ও মেধাবী স্বভাবের মেয়ে ছিল। একই প্রতিষ্ঠানের প্রথম বর্ষের ছাত্র তাহমিদের সাথে তার প্রেমের সম্পর্ক গড়ে ওঠে। কিন্তু তাহমিদের উদ্দেশ্য ছিল ভিন্ন। সে ঋষিকার অসম্মতি সত্ত্বেও শারীরিক সম্পর্ক স্থাপনের জন্য এক জঘন্য পথ বেছে নেয়। বাইরে ঘুরতে যাওয়ার নাম করে সে নিয়মিত ঋষিকার পানীয়তে স্বল্প মাত্রার ড্রাগস মিশিয়ে তাকে আচ্ছন্ন করে রাখত।</p>
+
+                <div class="clean-fact-box">
+                    <h3>মেডিকেল ও সায়েন্টিফিক ফ্যাক্ট (Scientific Fact)</h3>
+                    <p>চিকিৎসা বিজ্ঞানের মতে, কোনো ব্যক্তির অজান্তে তাকে নিয়মিত নির্দিষ্ট মাত্রার ড্রাগ (যেমন- Benzodiazepines) দেওয়া হলে তার সেন্ট্রাল নার্ভাস সিস্টেম (CNS) ওই রাসায়নিকের ওপর নির্ভরশীল হয়ে পড়ে। একে বলা হয় <strong>'Physiological Dependence'</strong>।</p>
+                    <p>এক্ষেত্রে ব্যক্তির কোনো মানসিক ইচ্ছা না থাকলেও, শরীর ড্রাগের জন্য তীব্র আকাঙ্ক্ষা (Cravings) তৈরি করে। এটি সম্পূর্ণ একটি নিউরোবায়োলজিক্যাল পরিবর্তন, যার ফলে ভিক্টিম নিজের শরীরের ওপর নিয়ন্ত্রণ হারিয়ে ফেলে।</p>
+                </div>
+
+                <p>প্রায় দেড় বছর ধরে চলা এই প্রক্রিয়ায় ঋষিকা শারীরিকভাবে মাদকের ওপর নির্ভরশীল হয়ে পড়ে, যা সম্পূর্ণভাবে তাহমিদের দ্বারা নিয়ন্ত্রিত ছিল। ড্রাগের প্রভাবে ঋষিকার আধা-চেতন অবস্থার সুযোগ নিয়ে তাহমিদ তার অসংখ্য আপত্তিকর ভিডিও এবং ছবি ধারণ করে। এরপর একসময় সে সম্পর্ক ছিন্ন করে দেয়।</p>
+
+                <h2 class="subhead">ডিজিটাল ব্ল্যাকমেইল ও করুণ পরিণতি</h2>
+                <p>ড্রাগের সরবরাহ বন্ধ হয়ে যাওয়ায় ঋষিকার শরীরে তীব্র 'উইথড্রয়াল সিম্পটম' দেখা দেয়। এই অসহায়ত্বের সুযোগ নেয় তাহমিদ। সে ড্রাগ দেওয়ার প্রলোভন দেখিয়ে ঋষিকাকে মানসিকভাবে ব্ল্যাকমেইল করতে থাকে এবং তার ধারণকৃত ভিডিওগুলোর ভয় দেখাতে শুরু করে। চরম শারীরিক যন্ত্রণায় বাধ্য হয়ে ঋষিকা এক বান্ধবীর কাছ থেকে ড্রাগ সংগ্রহ করে। বিষয়টি জানতে পেরে তাহমিদ তাকে ফোনে ক্রমাগত গালিগালাজ এবং মানসিক নির্যাতন করতে থাকে।</p>
+
+                <div class="pull-quote">
+                    <p>"মরলে মর, আমার কিছু যায় আসে না।"</p>
+                    <cite>— আত্মহত্যার ঠিক আগে ঋষিকাকে বলা তাহমিদের শেষ কথা</cite>
+                </div>
+
+                <p>মৃত্যুর দিন চরম মানসিক বিপর্যয়ের মধ্যে ঋষিকা তাহমিদকে ফোন করে আকুতি জানায় ভিডিওগুলো ডিলিট করার জন্য। সে জানায়, অন্যথায় সে আত্মহত্যা করবে। কিন্তু তাহমিদ তাকে থামানোর বদলে পরোক্ষভাবে আত্মহত্যার প্ররোচনা (Suicide Baiting) দেয়। সিসিটিভি ফুটেজে দেখা যায়, <strong>ভোর ৫:৩৭ মিনিটে তাহমিদ ঋষিকার বাড়ির সামনে ঘোরাঘুরি করছে।</strong> সে সময়ও তাদের মধ্যে ভিডিও কল চলছিল। এই অসহ্য মানসিক চাপ সহ্য করতে না পেরে ঋষিকা আত্মহত্যার পথ বেছে নেয়।</p>
+
+                <h2 class="subhead">প্রাতিষ্ঠানিক কভার-আপ এবং বিচারহীনতা</h2>
+                <p>ঋষিকার মৃত্যুর পর সে তার ল্যাপটপ ও ফোনে চ্যাট হিস্ট্রি, অডিও রেকর্ড এবং স্ক্রিনশট রেখে যায়, যা তাহমিদের অপরাধের অকাট্য প্রমাণ। কিন্তু এরপরই শুরু হয় প্রাতিষ্ঠানিক রাজনীতি। জানা যায়, তাহমিদের মা ক্যামব্রিয়ান কলেজের একজন সিনিয়র এক্সিকিউটিভ শিক্ষক। এই পদমর্যাদাই পুরো ঘটনার মোড় ঘুরিয়ে দেয়।</p>
+                <p>কলেজ কর্তৃপক্ষ এবং প্রভাবশালীদের চাপে ভিক্টিমের দিকেই আঙুল তোলা হয়। ঋষিকার রেখে যাওয়া ডিজিটাল প্রমাণগুলোকে 'যথেষ্ট নয়' বলে আইনি প্রক্রিয়াকে ধীর করে দেওয়া হয়। দেশের অন্যান্য চাঞ্চল্যকর ঘটনার মতো এই ঘটনাটিও একসময় মানুষের স্মৃতি থেকে মুছে যাবে—এই আশায় তাহমিদ ও তার পরিবার বর্তমানে শহর ছেড়ে আত্মগোপনে আছে।</p>
+                <p>এই প্রাতিষ্ঠানিক অবক্ষয়ের পেছনে রয়েছে বিএসবি এডুকেশন গ্রুপ এবং ক্যামব্রিয়ান কলেজের চেয়ারম্যান <strong>লায়ন এম কে বাশার</strong>-এর দুর্নীতি ও জালিয়াতির ইতিহাস। যে প্রতিষ্ঠানের প্রধান নিজেই বিদেশে পড়াশোনার নামে প্রতারণা করে হাজারো শিক্ষার্থীর কাছ থেকে শত কোটি টাকা অর্থপাচারের দায়ে সিআইডি কর্তৃক অভিযুক্ত এবং গ্রেপ্তার হয়েছেন, সেই প্রতিষ্ঠানে প্রশাসনিক কর্মকর্তারা নিজেদের অপরাধী সন্তানদের আড়াল করতে প্রভাব খাটাবেন—এটাই যেন স্বাভাবিক হয়ে দাঁড়িয়েছে।</p>
+                <p style="font-weight: bold; font-size: 22px; color: var(--deep-red); margin-top: 40px; text-align: center;">ডিজিটাল প্রমাণ এবং বৈজ্ঞানিক ব্যাখ্যার পরও কি প্রাতিষ্ঠানিক ক্ষমতার কাছে ন্যায়বিচার হার মানবে?</p>
+            </div>
+
+            <!-- ENGLISH CONTENT -->
+            <div data-lang="en">
+                <p>The death of Rishika, a ninth-grade student of Cambrian School and College (BSB Education Group) in Dhaka's Mohammadpur, may initially appear to be an ordinary suicide. However, a terrifying criminal network lies hidden beneath. This incident is a brutal example of how an unequal relationship can lead to forced drug addiction, digital blackmail, and ultimately death.</p>
+                <p>Investigations revealed that Rishika was an extremely quiet and talented girl. She became romantically involved with Tahmid, a first-year student at the same institution. But Tahmid's intentions were different. Despite Rishika's refusal, he chose a despicable path to establish a physical relationship. Under the guise of outings, he regularly mixed low-dose drugs into her drinks to keep her in a stupor.</p>
+
+                <div class="clean-fact-box">
+                    <h3>Medical & Scientific Fact</h3>
+                    <p>According to medical science, when a person is unknowingly given specific doses of drugs (such as Benzodiazepines) regularly, their Central Nervous System (CNS) becomes dependent on these chemicals. This is called <strong>'Physiological Dependence'</strong>.</p>
+                    <p>In this state, even without mental desire, the body develops intense cravings for the drug. It is a complete neurobiological change, causing the victim to lose control over their own body.</p>
+                </div>
+
+                <p>Over nearly a year and a half, Rishika became physically dependent on drugs, completely controlled by Tahmid. Taking advantage of her semi-conscious state, Tahmid captured numerous compromising videos and photos. Eventually, he ended the relationship.</p>
+
+                <h2 class="subhead">Digital Blackmail and Tragic Consequence</h2>
+                <p>With the drug supply cut off, Rishika suffered severe withdrawal symptoms. Tahmid exploited this vulnerability. He began mentally blackmailing her with promises of drugs and threats using the recorded videos. Driven by extreme physical pain, Rishika managed to obtain drugs from a friend. When Tahmid found out, he continuously abused and mentally tortured her over the phone.</p>
+
+                <div class="pull-quote">
+                    <p>"Die if you want, I don't care."</p>
+                    <cite>— Tahmid's last words to Rishika, right before her suicide</cite>
+                </div>
+
+                <p>On the day of her death, in extreme mental distress, Rishika called Tahmid, pleading with him to delete the videos. She said she would commit suicide otherwise. Instead of stopping her, Tahmid indirectly engaged in suicide baiting. CCTV footage shows <strong>Tahmid loitering in front of Rishika's house at 5:37 AM.</strong> A video call was still ongoing between them. Unable to bear this unbearable mental pressure, Rishika chose suicide.</p>
+
+                <h2 class="subhead">Institutional Cover-up and Impunity</h2>
+                <p>After her death, Rishika left behind chat histories, audio records, and screenshots on her laptop and phone—irrefutable evidence of Tahmid's crimes. But then institutional politics began. It was revealed that Tahmid's mother is a senior executive teacher at Cambrian College, a position that shifted the entire trajectory of the case.</p>
+                <p>Under pressure from college authorities and influential figures, fingers were pointed at the victim instead. The digital evidence left by Rishika was labelled 'insufficient', slowing down the legal process. Hoping this case would fade from public memory like other sensational incidents, Tahmid and his family have currently fled the city and are in hiding.</p>
+                <p>Behind this institutional decay is the history of corruption and fraud by <strong>Lion M. K. Bashar</strong>, Chairman of BSB Education Group and Cambrian College. The head of the institution himself was accused and arrested by the CID for embezzling hundreds of crores of taka from thousands of students under the guise of foreign education. In such an establishment, it seems normal that administrative officials would exert influence to shield their own criminal children.</p>
+                <p style="font-weight: bold; font-size: 22px; color: var(--deep-red); margin-top: 40px; text-align: center;">Even after digital evidence and scientific explanations, will justice surrender to institutional power?</p>
+            </div>
+
+            <!-- PROOFS DASHBOARD (BILINGUAL) -->
+            <div class="proofs-dashboard">
+                <h2>
+                    <span data-lang="bn">তদন্তের অকাট্য প্রমাণ</span>
+                    <span data-lang="en">Conclusive Evidence Dashboard</span>
+                </h2>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <span data-lang="bn"><strong>সিসিটিভি ফুটেজ (ভোর ৫:৩৭):</strong> মৃত্যুর দিন ভোর ৫:৩৭ মিনিটে তাহমিদকে ঋষিকার বাড়ির সামনে সন্দেহজনকভাবে ঘোরাঘুরি করতে দেখা গেছে।</span>
+                        <span data-lang="en"><strong>CCTV Footage (5:37 AM):</strong> On the day of death, Tahmid was seen suspiciously loitering in front of Rishika's house at 5:37 AM.</span>
+                    </li>
+                    <li class="evidence-item">
+                        <span data-lang="bn"><strong>ডিজিটাল লগ ও ভিডিও কল:</strong> মৃত্যুর ঠিক আগ মুহূর্তেও রিসিকা ও তাহমিদের মধ্যে ভিডিও কল চলছিল। রিসিকা ভিডিও ডিলিট করার আকুতি জানালেও তাহমিদ তাকে উল্টো প্ররোচনা দিচ্ছিল।</span>
+                        <span data-lang="en"><strong>Digital Log & Video Call:</strong> A video call was ongoing between Rishika and Tahmid even moments before her death. Rishika pleaded to delete the videos, but Tahmid provoked her instead.</span>
+                    </li>
+                    <li class="evidence-item">
+                        <span data-lang="bn"><strong>চ্যাট ও অডিও রেকর্ড:</strong> রিসিকার ল্যাপটপ এবং ফোনে তাহমিদের পাঠানো গালিগালাজ এবং ব্ল্যাকমেইলের অসংখ্য অডিও রেকর্ড ও স্ক্রিনশট উদ্ধার করা হয়েছে।</span>
+                        <span data-lang="en"><strong>Chat & Audio Records:</strong> Numerous abusive and blackmailing audio recordings and screenshots sent by Tahmid were recovered from Rishika's laptop and phone.</span>
+                    </li>
+                </ul>
+                <a href="https://www.facebook.com/share/v/1AwVyMVD7F/?mibextid=wwXIfr" target="_blank" rel="noopener" class="fb-btn">
+                    <span data-lang="bn">🎬 সরাসরি সিসিটিভি ফুটেজ ও ভিডিও প্রমাণ দেখুন</span>
+                    <span data-lang="en">🎬 Watch CCTV Footage & Video Evidence</span>
+                </a>
+            </div>
+
+            <!-- CORRUPTION SECTION (BILINGUAL) -->
+            <div class="corruption-section">
+                <h3>
+                    <span data-lang="bn">লায়ন এম কে বাশার: জালিয়াতির ইতিহাস</span>
+                    <span data-lang="en">Lion M. K. Bashar: A History of Fraud</span>
+                </h3>
+                <p>
+                    <span data-lang="bn">ক্যামব্রিয়ান কলেজ ও বিএসবি এডুকেশন গ্রুপের চেয়ারম্যান লায়ন এম কে বাশার নিজেই বর্তমানে সিআইডি (CID) কর্তৃক অর্থপাচার ও শিক্ষার্থীদের সাথে কোটি কোটি টাকার জালিয়াতির অভিযোগে অভিযুক্ত। বিদেশে পড়াশোনার নামে প্রতারণা করে অর্থ আত্মসাতের দায়ে তিনি ইতিপূর্বে গ্রেপ্তারও হয়েছেন। যে প্রতিষ্ঠানের প্রধান নিজেই অপরাধের সাথে যুক্ত, সেখানে রিসিকার মতো ছাত্রীদের নিরাপত্তা ও বিচার প্রাপ্তি আজ বড় প্রশ্নচিহ্নের মুখে।</span>
+                    <span data-lang="en">The Chairman of Cambrian College and BSB Education Group, Lion M. K. Bashar, is currently accused by the CID of money laundering and defrauding students of crores of taka. He has previously been arrested for embezzling money under the pretext of foreign education. In an institution where the head himself is involved in crime, the safety and justice for students like Rishika now faces a serious question mark.</span>
+                </p>
+            </div>
+
+            <!-- MEDIA REPORTS GRID -->
+            <h2 class="media-heading">
+                <span data-lang="bn">সম্পর্কিত সংবাদ ও মিডিয়া রিপোর্ট</span>
+                <span data-lang="en">Related News & Media Reports</span>
+            </h2>
+            <div class="yt-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/gJ2jvG1rwNc" title="Independent TV Report" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">
+                        <span data-lang="bn">ইন্ডিপেন্ডেন্ট টিভি: বিএসবি গ্লোবাল নেটওয়ার্কের জালিয়াতি রিপোর্ট</span>
+                        <span data-lang="en">Independent TV: BSB Global Network Fraud Report</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/RrTk4f4jufc" title="Ekushey TV Report" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">
+                        <span data-lang="bn">একুশে টিভি: শিক্ষার্থীদের সাথে প্রতারণা ও অর্থপাচার মামলা</span>
+                        <span data-lang="en">Ekushey TV: Fraud & Money Laundering Case Against Students</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Rce4Lvyta1Q" title="Boishakhi TV Report" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">
+                        <span data-lang="bn">বৈশাখী টিভি: ক্যামব্রিয়ান কলেজ কর্তৃপক্ষের দুর্নীতির অনুসন্ধান</span>
+                        <span data-lang="en">Boishakhi TV: Investigation into Cambrian College Corruption</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-container">
+                <a href="#" class="tag">#CyberCrime</a>
+                <a href="#" class="tag">#DrugAbuse</a>
+                <a href="#" class="tag">#JusticeForRishika</a>
+                <a href="#" class="tag">#CambrianCollege</a>
+                <a href="#" class="tag">#Bangladesh</a>
+                <a href="#" class="tag">#CoverUp</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div style="max-width: 860px; margin: 0 auto;">
+            <h3>
+                <span data-lang="bn">মূল কেস রিপোর্ট ও সংবাদ সূত্র</span>
+                <span data-lang="en">Primary Case Reports & News Sources</span>
+            </h3>
+            <ul>
+                <li><a href="https://www.dailypresenttimes.com/another-talented-life-lost-due-to-cyberbullying/" target="_blank">Another Talented Life Lost Due to Cyberbullying - Daily Present Times</a></li>
+                <li><a href="https://kholakagojbd.com/news/41054" target="_blank">সাইবার বুলিংয়ের শিকার হয়ে ঝরল আরেক মেধাবী প্রাণ - Khola Kagoj BD</a></li>
+                <li><a href="https://www.bssnews.net/others/322069" target="_blank">BSS News (CID Report)</a></li>
+            </ul>
+            <p style="margin-top: 30px; text-align: center; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px;">
+                CID NEWS &nbsp;·&nbsp; info@cidnews.com &nbsp;·&nbsp; Copyright © 2026 CID News. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            const body = document.getElementById('body-root');
+            const btnBn = document.getElementById('btn-bn');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'en') {
+                body.classList.add('lang-en');
+                btnEn.classList.add('active');
+                btnBn.classList.remove('active');
+                document.getElementById('html-root').setAttribute('lang', 'en');
+            } else {
+                body.classList.remove('lang-en');
+                btnBn.classList.add('active');
+                btnEn.classList.remove('active');
+                document.getElementById('html-root').setAttribute('lang', 'bn');
+            }
+        }
+    </script>
+</body>
+  </html>
